@@ -16,7 +16,6 @@ bool validation(int l, int L, long double x, long double theta) {
 
 long long simulation(int l, int L, long long cant) {
     long long cantOverLaps = 0;
-    #pragma omp parallel for num_threads(8) reduction(+:cantOverLaps)
     for(long long i = 0; i < cant; i++) {
         long double x, theta;
         x = distribution(generator) * l;
